@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <select-month/>
-    <calender/>
+    <calender :getMembers="getMembers"/>
   </div>
 </template>
 
@@ -14,6 +14,11 @@ export default {
   components: {
     calender,
     selectMonth
+  },
+  computed: {
+    getMembers () {
+      return this.$store.state.member.members || []
+    }
   },
   mounted () {
     this.$store.dispatch('member/getMembers')
