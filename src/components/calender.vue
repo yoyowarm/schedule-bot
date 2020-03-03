@@ -1,14 +1,18 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <el-calendar v-model="value">
+</el-calendar>
   </div>
 </template>
 
 <script>
+const moment = require('moment')
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  data () {
+    return {
+      value: moment().format()
+    }
   }
 }
 </script>

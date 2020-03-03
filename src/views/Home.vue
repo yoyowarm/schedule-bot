@@ -1,17 +1,22 @@
 <template>
   <div class="home">
-    <calender msg="Welcome to Your Vue.js App"/>
+    <select-month/>
+    <calender/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import calender from '@/components/calender.vue'
+import selectMonth from '@/components/select.vue'
 
 export default {
   name: 'Home',
   components: {
-    calender
+    calender,
+    selectMonth
+  },
+  mounted () {
+    this.$store.dispatch('member/getMembers')
   }
 }
 </script>
