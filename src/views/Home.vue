@@ -38,7 +38,7 @@ export default {
     }
   },
   mounted () {
-    this.$store.dispatch('member/getMembers')
+    // this.$store.dispatch('member/getMembers')
   }
 }
 </script>
