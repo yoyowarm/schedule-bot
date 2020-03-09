@@ -21,7 +21,7 @@ export default {
   data () {
     return {
       year: moment().year(),
-      month: moment().month() + 1
+      month: `0${moment().month() + 1}`
     }
   },
   computed: {
@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     updateMonth (val) {
-      this.month = val
+      this.month = `0${val}`
     },
     updateYear (val) {
       this.year = val

@@ -26,7 +26,7 @@
 export default {
   props: {
     propsYear: Number,
-    propsMonth: Number
+    propsMonth: String
   },
   data () {
     return {

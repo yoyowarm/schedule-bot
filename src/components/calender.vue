@@ -26,12 +26,12 @@ export default {
   props: {
     members: Array,
     propsYear: Number,
-    propsMonth: Number
+    propsMonth: String
   },
   data () {
     return {
-      value: moment().format(),
-      inputDay: '2020-3-1',
+      value: new Date(moment().format()),
+      inputDay: '2020-03-01',
       PERIOD,
       WEEKDAYS
     }
@@ -55,7 +55,8 @@ export default {
   },
   methods: {
     getCalendar () {
-      return calendar(`${this.propsYear}-${this.propsMonth}-1`)
+      console.log(`${this.propsYear}-${this.propsMonth}-01`)
+      return calendar(`${this.propsYear}-${this.propsMonth}-01`)
     }
   }
 }
