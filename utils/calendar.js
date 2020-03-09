@@ -23,7 +23,8 @@ export const schedule = (schedule, members) => {
     for (const date in schedule[weekDay]) {
       dateLen[weekDay] = Object.keys(schedule[weekDay]).length
       for (const spots in schedule[weekDay][date]) {
-        console.log(spots)
+        const arr = []
+        arr.push(spots)
         spotsLen[weekDay] = Object.keys(schedule[weekDay][date]).length
       }
     }

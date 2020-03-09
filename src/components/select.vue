@@ -1,6 +1,6 @@
 <template>
   <div>
-      <el-select v-model="year" placeholder="请选择">
+      <el-select v-model="yearModel" placeholder="请选择">
       <el-option
         v-for="item in yearOptions"
         :key="item.value"
@@ -8,7 +8,7 @@
         :value="item.value">
       </el-option>
     </el-select>
-    <el-select v-model="month" placeholder="请选择">
+    <el-select v-model="monthModel" placeholder="请选择">
       <el-option
         v-for="item in monthOptions"
         :key="item.value"
@@ -16,27 +16,45 @@
         :value="item.value">
       </el-option>
     </el-select>
+    <el-button @click="refresh" type="primary">refresh</el-button>
   </div>
 
 </template>
 
 <script>
-const moment = require('moment')
 
 export default {
+  props: {
+    propsYear: Number,
+    propsMonth: Number
+  },
   data () {
     return {
-      year: moment().year(),
-      month: moment().month() + 1
     }
   },
   computed: {
+    yearModel: {
+      get () {
+        return this.propsYear
+      },
+      set (val) {
+        this.$emit('updateYear', val)
+      }
+    },
+    monthModel: {
+      get () {
+        return this.propsMonth
+      },
+      set (val) {
+        this.$emit('updateMonth', val)
+      }
+    },
     yearOptions () {
       const years = []
       for (let i = 0; i < 5; i++) {
         years.push({
-          value: this.year - 1 + i,
-          year: this.year - 1 + i
+          value: this.yearModel - 1 + i,
+          year: this.yearModel - 1 + i
         })
       }
       return years
@@ -50,6 +68,12 @@ export default {
         })
       }
       return months
+    }
+  },
+  methods: {
+    async refresh () {
+      const refresh = await this.$store.dispatch('member/getMembers')
+      console.log(refresh, this.$store.state.member.members)
     }
   }
 }

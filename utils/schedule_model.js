@@ -1,25 +1,25 @@
 export default {
   0: {
     Spot1: {
-      name: '',
+      name: 'Spot1',
       onDays: [],
       midday: [],
       afternoon: []
     },
     Spot2: {
-      name: '',
+      name: 'Spot2',
       onDays: [],
       midday: [],
       afternoon: []
     },
     Spot3: {
-      name: '',
+      name: 'Spot3',
       onDays: [],
       midday: [],
       afternoon: []
     },
     Spot4: {
-      name: '',
+      name: 'Spot4',
       onDays: [],
       midday: [],
       afternoon: []
@@ -27,7 +27,7 @@ export default {
   },
   1: {
     Spot1: {
-      name: '',
+      name: 'Spot1',
       onDays: [],
       midday: [],
       afternoon: []
@@ -35,7 +35,7 @@ export default {
   },
   2: {
     Spot1: {
-      name: '',
+      name: 'Spot1',
       onDays: [],
       midday: [],
       afternoon: []
@@ -43,7 +43,7 @@ export default {
   },
   3: {
     Spot1: {
-      name: '',
+      name: 'Spot1',
       onDays: [],
       midday: [],
       afternoon: []
@@ -51,7 +51,7 @@ export default {
   },
   4: {
     Spot1: {
-      name: '',
+      name: 'Spot1',
       onDays: [],
       midday: [],
       afternoon: []
@@ -59,37 +59,37 @@ export default {
   },
   5: {
     Spot1: {
-      name: '',
+      name: 'Spot1',
       onDays: [],
       midday: [],
       afternoon: []
     },
     Spot2: {
-      name: '',
+      name: 'Spot2',
       afternoon: []
     }
   },
   6: {
     Spot1: {
-      name: '',
+      name: 'Spot1',
       onDays: [],
       midday: [],
       afternoon: []
     },
     Spot2: {
-      name: '',
+      name: 'Spot2',
       onDays: [],
       midday: [],
       afternoon: []
     },
     Spot3: {
-      name: '',
+      name: 'Spot3',
       onDays: [],
       midday: [],
       afternoon: []
     },
     Spot4: {
-      name: '',
+      name: 'Spot4',
       onDays: [],
       midday: [],
       afternoon: []

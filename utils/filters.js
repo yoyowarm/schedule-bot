@@ -4,7 +4,7 @@ export const membersFilters = (schedules, members) => {
       for (const period in member.allow[date]) {
         if (member.allow[date][period] > 0) {
           for (var i = 0; i < member.allow[date][period]; i++) {
-            schedules[date][period].push(member)
+            if (schedules[date][period])schedules[date][period].push(member)
           }
         }
       }

@@ -38,9 +38,11 @@ export const randomAssigned = (schedule, list) => {
         for (const period in copySchedule[weekDay][date][spot]) {
           if (typeof copySchedule[weekDay][date][spot][period] !== 'string') {
             for (let i = 0; i < 4; i++) {
-              if (copyList[weekDay][period][0] && !copySchedule[weekDay][date][spot][period].some(member => { return member.name === copyList[weekDay][period][0].name })) {
-                copySchedule[weekDay][date][spot][period].push(copyList[weekDay][period][0])
-                copyList[weekDay][period].splice(0, 1)
+              if (copyList[weekDay][period]) {
+                if (copyList[weekDay][period][0] && !copySchedule[weekDay][date][spot][period].some(member => { return member.name === copyList[weekDay][period][0].name })) {
+                  copySchedule[weekDay][date][spot][period].push(copyList[weekDay][period][0])
+                  copyList[weekDay][period].splice(0, 1)
+                }
               }
             }
           }
