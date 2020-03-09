@@ -8,10 +8,10 @@ export const schedulesSampling = JSON.parse(JSON.stringify(schedulesModel))
 
 export const calendar = (inputDay) => {
   const daysArr = { sun: {}, mon: {}, tur: {}, wed: {}, thu: {}, fir: {}, sat: {} }
-  const currentMonthDays = moment(inputDay).daysInMonth()
+  const currentMonthDays = moment(`${inputDay} 00:00:00`).daysInMonth()
   for (let i = 0; i < currentMonthDays; i++) {
-    const newDayWeekday = moment(inputDay).add(i, 'days').weekday()
-    daysArr[weekDays[newDayWeekday]][moment(inputDay).add(i, 'days').format('YYYY-MM-DD')] = scheduleModel[newDayWeekday]
+    const newDayWeekday = moment(`${inputDay} 00:00:00`).add(i, 'days').weekday()
+    daysArr[weekDays[newDayWeekday]][moment(`${inputDay} 00:00:00`).add(i, 'days').format('YYYY-MM-DD')] = scheduleModel[newDayWeekday]
   }
   return daysArr
 }
