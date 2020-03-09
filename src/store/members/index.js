@@ -1,9 +1,9 @@
 import { getMembers } from '../../api/member'
-
+const membersMock = require('../../../utils/member.mock.json')
 export default {
   namespaced: true,
   state: {
-    members: []
+    members: membersMock
   },
   mutations: {
     SET_MEMBERS (state, data) {
